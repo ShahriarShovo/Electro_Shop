@@ -11,9 +11,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     ROLE_CHOOSED=((ADMIN,'admin'), (CUSTOMER,'customer'),)
 
-    fist_name=models.CharField(max_length=50,null=True,blank=True)
+    first_name=models.CharField(max_length=50,null=True,blank=True)
     last_name=models.CharField(max_length=50,null=True,blank=True)
-    username=models.CharField(max_length=50, unique=True,null=True)
+    username=models.CharField(max_length=50, unique=True)
     email=models.EmailField(max_length=100, unique=True)
     phone_number=models.CharField(max_length=20, blank=True, unique=True, null=True)
 

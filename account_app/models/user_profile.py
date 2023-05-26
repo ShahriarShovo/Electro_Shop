@@ -18,4 +18,4 @@ class UserProfile(models.Model):
     modify_at=models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.user.username
+        return self.user.email
