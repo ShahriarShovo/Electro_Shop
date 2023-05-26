@@ -9,7 +9,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     ADMIN=1
     CUSTOMER=2
 
+    MALE=1
+    FEMALE=2
+
     ROLE_CHOOSED=((ADMIN,'admin'), (CUSTOMER,'customer'),)
+    GENDER_CHOOSED= ((MALE,'male'),(FEMALE,'female'))
 
     first_name=models.CharField(max_length=50,null=True,blank=True)
     last_name=models.CharField(max_length=50,null=True,blank=True)
@@ -18,6 +22,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number=models.CharField(max_length=20, blank=True, unique=True, null=True)
 
     role= models.PositiveSmallIntegerField(choices=ROLE_CHOOSED, blank=True,null=True)
+    gender_choosed= models.PositiveSmallIntegerField(choices=GENDER_CHOOSED, blank=True,null=True)
 
     #requires fields
     date_joined=models.DateTimeField(auto_now_add=True)
